@@ -1,9 +1,9 @@
-name : Postman Collection Workflow
+name: Postman Collection Workflow
 
 on:
   push:
-    branches: [main]
-  workflow_dispatch:
+    branches: [ main ]
+  workflow_dispatch:       # allows manual trigger
   schedule:
     - cron : 28 10 * * * # this is UTC timezone 
     - cron : 00 14 * * * # this is UTC timezone
