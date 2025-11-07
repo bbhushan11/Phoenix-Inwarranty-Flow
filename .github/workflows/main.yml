@@ -5,7 +5,7 @@ on:
     branches: [main]
   workflow_dispatch:
   schedule:
-    - cron : 30 02 * * * # this is UTC timezone 
+    - cron : 30 09 * * * # this is UTC timezone 
     - cron : 00 14 * * * # this is UTC timezone
     - cron : 00 06 * * 1-5  # this is UTC timezone Monday to Friday
 
