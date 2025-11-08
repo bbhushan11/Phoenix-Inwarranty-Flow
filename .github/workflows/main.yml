@@ -5,13 +5,13 @@ on:
     branches: [ main ]
   workflow_dispatch:       # allows manual trigger
   schedule:
-    - cron : 28 10 * * * # this is UTC timezone 
-    - cron : 00 14 * * * # this is UTC timezone
-    - cron : 00 06 * * 1-5  # this is UTC timezone Monday to Friday
+    - cron : 30 02 * * *     #this is 8 am IST 
+    - cron : 00 14 * * *     #this is 7.30 pm IST
+    - cron : 00 06 * * 1-5   #this is IST Monday to Friday
 
 jobs:
   run-postman-tests:
-    runs-on: ubantu-latest 
+    runs-on: ubuntu-latest 
 
     steps:
       - name: checkout the code
@@ -31,7 +31,7 @@ jobs:
         run: |
               newman run 'Inwarranty-flow Collection Copy.postman_collection.json' \
               -e QA.postman_environment.json \
-              -d testdata.csv \
+              -d testData.csv \
               -r cli,htmlextra
 
       - name: Newman Report
